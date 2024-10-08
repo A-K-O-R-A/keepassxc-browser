@@ -1,8 +1,8 @@
-'use strict';
+
 
 const options = {};
 
-const $ = function(elem) {
+$ = function(elem) {
     return document.querySelector(elem);
 };
 
@@ -576,6 +576,8 @@ options.initSitePreferences = function() {
         row.setAttribute('url', url);
         row.setAttribute('id', 'tr-scf' + newIndex);
         row.children[0].textContent = url;
+
+        /*
         row.children[1].children[0].value = ignore;
         row.children[1].children[0].addEventListener('change', selectionChanged);
         row.children[2].children['usernameOnly'].checked = usernameOnly;
@@ -591,6 +593,7 @@ options.initSitePreferences = function() {
         row.children[7].children['autoFillTOTP'].checked = autoFillTOTP;
         row.children[7].children['autoFillTOTP'].addEventListener('change', checkboxClicked);
         row.children[8].addEventListener('click', removeButtonClicked);
+        */
 
         $('#tab-site-preferences table tbody').append(row);
     };
