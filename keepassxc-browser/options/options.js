@@ -547,10 +547,10 @@ options.initSitePreferences = function() {
                     site.allowIframes = this.checked;
                 } else if (this.name === 'autoSubmit') {
                     site.autoSubmit = this.checked;
-                } else if (this.name === 'autoFillCredentials') {
-                    site.autoFillCredentials = this.checked;
-                } else if (this.name === 'autoFillTOTP') {
-                    site.autoFillTOTP = this.checked;
+                } else if (this.name === 'autoFillSingleEntry') {
+                    site.autoFillSingleEntry = this.checked;
+                } else if (this.name === 'autoFillSingleTotp') {
+                    site.autoFillSingleTotp = this.checked;
                 }
             }
         }
@@ -571,29 +571,28 @@ options.initSitePreferences = function() {
         options.saveSettings();
     };
 
-    const addNewRow = function(rowClone, newIndex, url, ignore, usernameOnly, improvedFieldDetection, allowIframes, autoSubmit, autoFillCredentials, autoFillTOTP) {
+    const addNewRow = function(rowClone, newIndex, url, ignore, usernameOnly, improvedFieldDetection, allowIframes, autoSubmit, autoFillSingleEntry, autoFillSingleTotp) {
         const row = rowClone.cloneNode(true);
         row.setAttribute('url', url);
         row.setAttribute('id', 'tr-scf' + newIndex);
         row.children[0].textContent = url;
 
-        /*
-        row.children[1].children[0].value = ignore;
-        row.children[1].children[0].addEventListener('change', selectionChanged);
-        row.children[2].children['usernameOnly'].checked = usernameOnly;
-        row.children[2].children['usernameOnly'].addEventListener('change', checkboxClicked);
-        row.children[3].children['improvedFieldDetection'].checked = improvedFieldDetection;
-        row.children[3].children['improvedFieldDetection'].addEventListener('change', checkboxClicked);
-        row.children[4].children['allowIframes'].checked = allowIframes;
-        row.children[4].children['allowIframes'].addEventListener('change', checkboxClicked);
-        row.children[5].children['autoSubmit'].checked = autoSubmit;
-        row.children[5].children['autoSubmit'].addEventListener('change', checkboxClicked);
-        row.children[6].children['autoFillCredentials'].checked = autoFillCredentials;
-        row.children[6].children['autoFillCredentials'].addEventListener('change', checkboxClicked);
-        row.children[7].children['autoFillTOTP'].checked = autoFillTOTP;
-        row.children[7].children['autoFillTOTP'].addEventListener('change', checkboxClicked);
-        row.children[8].addEventListener('click', removeButtonClicked);
-        */
+        const details = row;
+        details.querySelector('#ignore').value = ignore;
+        details.querySelector('#ignore').addEventListener('change', selectionChanged);
+        details.querySelector('#usernameOnly').checked = usernameOnly;
+        details.querySelector('#usernameOnly').addEventListener('change', checkboxClicked);
+        details.querySelector('#improvedFieldDetection').checked = improvedFieldDetection;
+        details.querySelector('#improvedFieldDetection').addEventListener('change', checkboxClicked);
+        details.querySelector('#allowIframes').checked = allowIframes;
+        details.querySelector('#allowIframes').addEventListener('change', checkboxClicked);
+        details.querySelector('#autoSubmit').checked = autoSubmit;
+        details.querySelector('#autoSubmit').addEventListener('change', checkboxClicked);
+        details.querySelector('#autoFillSingleEntry').checked = autoFillSingleEntry;
+        details.querySelector('#autoFillSingleEntry').addEventListener('change', checkboxClicked);
+        details.querySelector('#autoFillSingleTotp').checked = autoFillSingleTotp;
+        details.querySelector('#autoFillSingleTotp').addEventListener('change', checkboxClicked);
+        details.querySelector('#deleteButton').addEventListener('click', removeButtonClicked);
 
         $('#tab-site-preferences table tbody').append(row);
     };
