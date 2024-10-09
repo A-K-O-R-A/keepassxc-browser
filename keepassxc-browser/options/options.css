@@ -120,17 +120,6 @@ table tbody tr.empty:not(:nth-last-child(2)) {
   display: none;
 }
 
-#tab-site-preferences td:nth-of-type(2),
-#tab-site-preferences td:nth-of-type(2) select {
-    min-width: 200px;
-}
-
-#tab-site-preferences td:nth-of-type(3),
-#tab-site-preferences td:nth-of-type(4),
-#tab-site-preferences td:nth-of-type(5),
-table td:last-of-type {
-    width: 1px;
-}
 
 #tab-site-preferences div.table-responsive {
     min-height: 35rem;
