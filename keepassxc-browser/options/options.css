@@ -132,6 +132,10 @@ table td:last-of-type {
     width: 1px;
 }
 
+#tab-site-preferences div.table-responsive {
+    min-height: 20rem;
+}
+
 .close {
     color: var(--kpxc-text-color);
 }
@@ -226,7 +230,7 @@ table td:last-of-type {
     .sidebar {
         width: 240px;
     }
-    
+
     main {
       margin-left: 240px !important;
       min-width: calc(0.8333333333 * 1440px) !important;
@@ -237,7 +241,7 @@ table td:last-of-type {
     footer {
         display: block;
     }
-    
+
     .form-text, .form-group {
         max-width: calc(0.8333333333 * 1440px);
     }
