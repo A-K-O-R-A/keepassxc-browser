@@ -578,8 +578,8 @@ options.initSitePreferences = function() {
         row.children[0].textContent = url;
 
         const details = row;
-        details.querySelector('#ignore').value = ignore;
-        details.querySelector('#ignore').addEventListener('change', selectionChanged);
+        // details.querySelector('#ignore').value = ignore;
+        // details.querySelector('#ignore').addEventListener('change', selectionChanged);
         details.querySelector('#usernameOnly').checked = usernameOnly;
         details.querySelector('#usernameOnly').addEventListener('change', checkboxClicked);
         details.querySelector('#improvedFieldDetection').checked = improvedFieldDetection;
